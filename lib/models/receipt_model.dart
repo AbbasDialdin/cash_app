@@ -1,4 +1,3 @@
-// نموذج بيانات الفاتورة
 class Receipt {
   final String merchant;
   final DateTime date;
@@ -6,7 +5,6 @@ class Receipt {
 
   Receipt({required this.merchant, required this.date, required this.amount});
 
-  // إنشاء كائن Receipt من JSON
   factory Receipt.fromJson(Map<String, dynamic> json) {
     return Receipt(
       merchant: json['merchant'] ?? 'غير معروف',
@@ -15,7 +13,6 @@ class Receipt {
     );
   }
 
-  // تحويل Receipt إلى JSON (إن أردت تخزينه محليًا)
   Map<String, dynamic> toJson() {
     return {
       'merchant': merchant,
