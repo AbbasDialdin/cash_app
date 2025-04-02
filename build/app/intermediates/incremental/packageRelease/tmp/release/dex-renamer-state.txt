@@ -1,0 +1,4 @@
+#Tue Mar 25 07:07:29 AST 2025
+base.0=E\:\\prog\\project\\nabra\\cash_app last bullding\\cash\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
