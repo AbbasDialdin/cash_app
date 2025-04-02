@@ -4,8 +4,8 @@ import 'package:path/path.dart';
 import 'dart:convert';
 
 class NetworkService {
-  static const String serverUrl =
-      "http://192.168.170.5:5000/parse"; // غيّره حسب IP الرازبيري
+  static const String serverUrl = //"http://192.168.170.5:5000/parse";
+      "https://cash-backend-5lw1.onrender.com/parse"; // غيّره حسب IP الرازبيري
 
   /// ترسل صورة إلى السيرفر وتعيد نتيجة تحليل الفاتورة
   static Future<String> uploadImage(File imageFile) async {

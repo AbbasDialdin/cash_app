@@ -37,14 +37,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
         for (var line in lines) {
           if (line.toLowerCase().contains('merchant') ||
-              line.toLowerCase().contains('store')) {
+              line.toLowerCase().contains('store') ||
+              line.contains('المتجر')) {
             merchant = line.split(':').last.trim();
-          } else if (line.toLowerCase().contains('date')) {
+          } else if (line.toLowerCase().contains('date') ||
+              line.contains('التاريخ')) {
             try {
               date = DateTime.parse(line.split(':').last.trim());
             } catch (_) {}
           } else if (line.toLowerCase().contains('amount') ||
-              line.contains('IQD')) {
+              line.contains('IQD') ||
+              line.contains('المبلغ')) {
             final match = RegExp(r'(\d{3,})').firstMatch(line);
             if (match != null) {
               amount = double.tryParse(match.group(1) ?? '0') ?? 0.0;
@@ -53,7 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
         }
 
         receipts.add(Receipt(merchant: merchant, date: date, amount: amount));
-
         isLoading = false;
       });
     }
